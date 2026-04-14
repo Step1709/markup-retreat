@@ -32,7 +32,7 @@ body {
 }
 
 .rate label {
-    width: 25px; /* Half of the star's width */
+    width: 25px;
     height: 50px;
     background-image: url('img/star-empty.png');
     background-size: 50px 50px;
@@ -40,30 +40,24 @@ body {
     cursor: pointer;
 }
 
-/* Left half of the star */
 .rate label.half {
     background-position: left center;
 }
 
-/* Right half of the star */
 .rate label:not(.half) {
     background-position: right center;
-    /* Optional slight gap between stars can be added here if needed */
 }
 
-/* Color logic using sibling selectors in row-reverse order */
-.rate input:checked ~ label,
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
+.rate input:checked~label,
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
     background-image: url('img/star.png');
 }
 
-/* Maintain hover fill when something is already checked */
-.rate label:hover ~ label {
+.rate label:hover~label {
     background-image: url('img/star.png');
 }
 
-/* Reset Button Styles */
 .reset-btn {
     padding: 8px 16px;
     background-color: white;
@@ -79,4 +73,4 @@ body {
     background-color: #f5f5f5;
     border-color: #ccc;
     color: #333;
-}
+}
